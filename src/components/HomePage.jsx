@@ -27,7 +27,7 @@ export function HomePage() {
             >
               <Stack.Item fill>
                 <TextContainer spacing="loose">
-                  <Heading>Customer Dashboard Pro app</Heading>
+                  <Heading>Customer Dashboard app</Heading>
                   <p>
                     Your app is ready to explore! It contains everything you
                     need to get started including the{" "}
