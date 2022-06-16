@@ -11,8 +11,6 @@ import {
 
 import trophyImgUrl from "../assets/home-trophy.png";
 
-import { ProductsCard } from "./ProductsCard";
-
 export function HomePage() {
   return (
     <Page fullWidth>
@@ -27,7 +25,7 @@ export function HomePage() {
             >
               <Stack.Item fill>
                 <TextContainer spacing="loose">
-                  <Heading>Customer Dashboard Pro</Heading>
+                  <Heading>Nice work on building a Shopify app 🎉</Heading>
                   <p>
                     Your app is ready to explore! It contains everything you
                     need to get started including the{" "}
@@ -76,7 +74,7 @@ export function HomePage() {
           </Card>
         </Layout.Section>
         <Layout.Section secondary>
-          <ProductsCard />
+     
         </Layout.Section>
       </Layout>
     </Page>
