@@ -21,8 +21,8 @@ export const Dashboard = () => {
 <>
 <Page>
   <Layout>
-    {cardData.map((ele)=>(
-          <Layout.Section oneThird>
+    {cardData.map((ele,index)=>(
+          <Layout.Section key={index} oneThird>
           <Card title={ele.title} actions={ele.content?[{content:ele.content}]:""}>
             <Card.Section>
               <TextStyle variation="subdued">{ele.value}</TextStyle>
@@ -36,9 +36,9 @@ export const Dashboard = () => {
   <Page title="Setting">
     <Layout>
         {
-            dataCard.map((ele)=>(
+            dataCard.map((ele,index)=>(
                 <Layout.AnnotatedSection
-                title={ele.heading}>
+                title={ele.heading} key={index}>
                 <Card sectioned>
                   <FormLayout>
                     {ele.value?<p>{ele.value}</p>:""}

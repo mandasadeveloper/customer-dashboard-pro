@@ -14,8 +14,21 @@ import { AppProvider as PolarisProvider } from "@shopify/polaris";
 import translations from "@shopify/polaris/locales/en.json";
 import "@shopify/polaris/build/esm/styles.css";
 import { FrameDashboard } from "./components/Frame";
+import { useEffect } from "react";
+import { BrowserRouter } from "react-router-dom";
 
 export default function App() {
+  useEffect(() => {
+    fetch('/access-token')
+    // Retrieve its body as ReadableStream
+    .then(response => console.log(response))
+  
+    // .then(body => {
+    //   const reader = body;
+    //   console.log(reader);
+    //   });
+    }, [])
+    
   return (
     <PolarisProvider i18n={translations}>
       <AppBridgeProvider
@@ -26,7 +39,9 @@ export default function App() {
         }}
       >
         <MyProvider>
-        <FrameDashboard />
+       <BrowserRouter>
+       <FrameDashboard />
+       </BrowserRouter>
         </MyProvider>
       </AppBridgeProvider>
     </PolarisProvider>

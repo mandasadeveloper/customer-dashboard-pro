@@ -40,6 +40,7 @@ export default function applyAuthMiddleware(app) {
     );
   });
 
+
   app.get("/auth/callback", async (req, res) => {
     try {
       const session = await Shopify.Auth.validateAuthCallback(
@@ -70,7 +71,10 @@ export default function applyAuthMiddleware(app) {
       }
 
       // Redirect to app with shop parameter upon auth
-      res.redirect(`/?shop=${session.shop}&host=${host}`);
+     //   res.status(200).send(session.accessToken);
+     // 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 
+     res.redirect(`/?shop=${session.shop}&host=${host}`);
+      
     } catch (e) {
       switch (true) {
         case e instanceof Shopify.Errors.InvalidOAuthError:

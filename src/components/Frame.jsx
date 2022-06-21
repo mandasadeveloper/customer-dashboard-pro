@@ -20,9 +20,7 @@ import {
 } from "@shopify/polaris";
 import {ConversationMinor, HomeMajor, SettingsMinor,CustomersMajor,MobileVerticalDotsMajor,CreditCardMajor} from "@shopify/polaris-icons";
 import { useCallback, useRef, useState } from "react";
-import { Customer } from "./Customers/Customer";
-import { Customers } from "./Customers/Customers";
-import { Dashboard } from "./Dashboard";
+import { Link } from "react-router-dom";
 import { Routing } from "./Routing";
 export const FrameDashboard=()=>{
 
@@ -175,39 +173,39 @@ export const FrameDashboard=()=>{
   );
 
   const navigationMarkup = (
-    <Navigation location="/">
-      {/* <Navigation.Section
-        items={[
-          {
-            label: 'Back to Shopify',
-            icon: ArrowLeftMinor,
-          },
-        ]}
-      /> */}
+    <Navigation>
       <Navigation.Section
         items={[
           {
-            label: 'Dashboard',
+            key:1,
+            label: (<Link to="/"  >Dashboard</Link>),
+            icon: HomeMajor,
+
+          },
+          {    
+            key:2,        
+            label: (<Link to="/customers"  >Customers</Link>),
+            icon: CustomersMajor,
+          },
+          {
+            key:3,       
+            label: (<Link to="/profile-setup"  >Profile Setup</Link>),         
             icon: HomeMajor,
           },
-          {
-            label: 'Customers',
-            icon: CustomersMajor,MobileVerticalDotsMajor,
-          },
-          {
-            label: 'Profile Setup',
-            icon: HomeMajor,
-          },
-          {
-            label: 'Menu Builder',
+          { 
+            key:4,       
+            label: (<Link to="/menu-builder"  >Menu Builder</Link>),           
             icon: MobileVerticalDotsMajor,
           },
           {
-            label: 'Upgrade Plan',
+            key:5,       
+            label: (<Link to="/upgrade-plan"  >Upgrade Plan</Link>),
+           
             icon: CreditCardMajor,
           },
           {
-            label: 'Setting',
+            key:6,       
+            label: (<Link to="/setting"  >Setting</Link>),           
             icon: SettingsMinor,
           },
         ]}
@@ -329,9 +327,7 @@ export const FrameDashboard=()=>{
         >
           {contextualSaveBarMarkup}
           {loadingMarkup}
-          <Dashboard/>
-          {/* <Customers/> */}
-          {/* <Customer/> */}
+          <Routing/>
           {toastMarkup}
           {modalMarkup}
         </Frame>
