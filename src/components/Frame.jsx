@@ -199,12 +199,17 @@ export const FrameDashboard=()=>{
           },
           {
             key:5,       
+            label: (<Link to="/toggle-feature"  >Toggle Feature</Link>),           
+            icon: SettingsMinor,
+          },
+          {
+            key:6,       
             label: (<Link to="/upgrade-plan"  >Upgrade Plan</Link>),
            
             icon: CreditCardMajor,
           },
           {
-            key:6,       
+            key:7,       
             label: (<Link to="/setting"  >Setting</Link>),           
             icon: SettingsMinor,
           },

@@ -1,5 +1,6 @@
 import { Button, Card, Layout, Modal, Page, SettingToggle, TextContainer } from '@shopify/polaris'
 import React, { useCallback, useState } from 'react'
+import { Toggle } from '../Togle';
 import { AddFieldsModel } from './AddFieldsModel';
 import { ProfileReorder } from './ProfileReorder'
 
@@ -60,16 +61,7 @@ export const ProfileSetup = () => {
    </Layout>
  </Page>
  <Page>
-   <SettingToggle
-      action={{
-        content: contentStatus,
-        onAction: handleToggle,
-      }}
-      enabled={active}
-    >
-      Allows your customers to update their marketing preference from within their 
-      customer account profiles.
-    </SettingToggle>
+<Toggle content="  Allows your customers to update their marketing preference from within their customer account profiles."/>
  </Page>
 </>
   )

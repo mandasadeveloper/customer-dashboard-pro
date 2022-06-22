@@ -16,20 +16,10 @@ import "@shopify/polaris/build/esm/styles.css";
 import { FrameDashboard } from "./components/Frame";
 import { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
+import "./assets/style.css";
 
 export default function App() {
-  useEffect(() => {
-    fetch('/access-token')
-    // Retrieve its body as ReadableStream
-    .then(response => console.log(response))
-  
-    // .then(body => {
-    //   const reader = body;
-    //   console.log(reader);
-    //   });
-    }, [])
-    
-  return (
+return (
     <PolarisProvider i18n={translations}>
       <AppBridgeProvider
         config={{

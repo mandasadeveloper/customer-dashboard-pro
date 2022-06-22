@@ -1,7 +1,7 @@
 import { Layout, Page, SettingToggle, TextStyle } from '@shopify/polaris';
 import React, { useCallback, useState } from 'react'
 
-export const Toggle=()=>{
+export const Toggle=({content})=>{
     const [active, setActive] = useState(false);
   
     const handleToggle = useCallback(() => setActive((active) => !active), []);
@@ -19,7 +19,7 @@ export const Toggle=()=>{
           onAction: handleToggle,
         }}
         enabled={active}
-      >Customers Dashboard Is <TextStyle variation="strong">{textStatus}</TextStyle>.
+      >{content} <TextStyle variation="strong">{textStatus}</TextStyle>.
       </SettingToggle>
         </Layout.Section>
     </Layout>
